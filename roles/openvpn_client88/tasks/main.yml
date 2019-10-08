@@ -1,0 +1,23 @@
+  - name: Install openvpn client
+    package:
+      name: openvpn
+      state: present
+
+  - name: Template openvpn config file
+    template:
+      src: openvpn.j2
+      dest: /etc/openvpn/client.conf
+      owner: root
+      group: root
+      mode: '0644' 
+
+  - name: Enable openvpn client
+    service:
+      name: openvpn
+      enabled: yes
+  
+  - name: Start openvpn client
+    service:
+      name: openvpn
+      state: started
+

@@ -1,0 +1,5 @@
+openvpn:
+  server_ip: 8.8.8.8
+  server_port: 2195
+  server_protocol: udp
+
